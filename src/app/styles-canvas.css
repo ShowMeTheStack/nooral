@@ -1,0 +1,73 @@
+/* The workflow canvas: a palette of blocks, round widgets with typed ports joined by curved wires (the look of a
+   visual-programming canvas), and the selected block's output below. */
+.cv-head { display: flex; gap: 16px; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; margin-bottom: 12px; }
+.cv-head h1 { margin: 2px 0 4px; font-size: 26px; letter-spacing: -0.02em; }
+.cv-head p { margin: 0; color: var(--muted); max-width: 860px; }
+.cv-tools { display: flex; gap: 8px; }
+.cv-main { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 12px; }
+.cv-pal { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 10px; display: flex; flex-direction: column; gap: 4px; box-shadow: var(--shadow); }
+.cv-pal h3 { margin: 2px 4px 4px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.cv-cat { font-size: 12px; font-weight: 700; color: var(--muted); margin: 8px 4px 2px; }
+.cv-item { display: flex; align-items: center; gap: 8px; text-align: left; border: 1px solid transparent; background: var(--surface2); border-radius: 10px; padding: 7px 10px; cursor: pointer; font-weight: 600; font-size: 14px; }
+.cv-item:hover { border-color: var(--accent); }
+.cv-dot { width: 12px; height: 12px; border-radius: 50%; flex: none; background: var(--node-line); }
+.cv-dot.t-table { background: var(--cls0); } .cv-dot.t-model { background: var(--accent); }
+.cv-work { background: var(--st-bg); background-image: radial-gradient(var(--st-grid) 1.1px, transparent 1.2px); background-size: 22px 22px; border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); min-width: 0; }
+.cv-host { width: 100%; }
+.cv-svg { width: 100%; height: 330px; display: block; touch-action: none; outline: none; }
+.cv-svg:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; border-radius: var(--radius); }
+.cv-body { fill: var(--node); stroke: var(--node-line); stroke-width: 2; cursor: grab; }
+.cv-block.ok .cv-body { stroke: color-mix(in srgb, var(--good) 70%, var(--node-line)); }
+.cv-block.warn .cv-body { stroke: var(--hot); stroke-dasharray: 5 4; }
+.cv-block.bad .cv-body { stroke: var(--bad); }
+.cv-block.sel .cv-body { stroke: var(--accent); stroke-width: 3.5; fill: var(--accent-soft); }
+.cv-icon { fill: none; stroke: var(--text); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; pointer-events: none; }
+.cv-port { stroke: var(--st-bg); stroke-width: 2; cursor: crosshair; }
+.cv-port.t-table { fill: var(--cls0); } .cv-port.t-model { fill: var(--accent); }
+.cv-port.can { stroke: var(--hot); stroke-width: 3.5; }
+.cv-name { font: 700 14px var(--font); fill: var(--text); pointer-events: none; }
+.cv-sum { font: 500 12px var(--font); fill: var(--muted); pointer-events: none; }
+.cv-sum.bad { fill: var(--bad); } .cv-sum.warn { fill: var(--hot-deep); }
+.cv-line { fill: none; stroke-width: 2.6; stroke-linecap: round; }
+.cv-wire.t-table .cv-line { stroke: color-mix(in srgb, var(--cls0) 75%, var(--st-bg)); }
+.cv-wire.t-model .cv-line { stroke: color-mix(in srgb, var(--accent) 75%, var(--st-bg)); }
+.cv-wire.sel .cv-line { stroke-width: 4.5; }
+.cv-hit { fill: none; stroke: transparent; stroke-width: 14; cursor: pointer; }
+.cv-pill { fill: var(--st-bg); stroke: var(--border); stroke-width: 1; }
+.cv-wname { font: 600 12px var(--font); fill: var(--muted); pointer-events: none; }
+.cv-tmp { fill: none; stroke: var(--hot); stroke-width: 2.4; stroke-dasharray: 6 4; pointer-events: none; }
+.cv-panel { margin-top: 14px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+.cv-phead { padding: 12px 18px 10px; border-bottom: 1px solid var(--border); display: flex; gap: 14px; align-items: baseline; flex-wrap: wrap; }
+.cv-ptitle { margin: 0; font-size: 18px; }
+.cv-psum { margin: 0; color: var(--muted); }
+.cv-stage .stage-svg [data-key^="cm:c"] { cursor: pointer; }
+.cv-extra { padding: 4px 18px 16px; }
+.cv-ex h3 { font-size: 15px; margin: 10px 0 8px; }
+.cv-hint { color: var(--muted); margin: 10px 0 0; }
+.cv-table { border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
+.cv-table th, .cv-table td { padding: 5px 12px 5px 0; text-align: left; border-bottom: 1px solid var(--border); }
+.cv-table th { color: var(--muted); font-weight: 650; font-size: 13px; }
+.cv-c { font-weight: 700; } .cv-c.c0 { color: var(--cls0); } .cv-c.c1 { color: var(--cls1); }
+.cv-form { display: flex; flex-direction: column; gap: 12px; }
+.cv-field { display: grid !important; grid-template-columns: 150px minmax(0, 1fr); gap: 4px 12px; align-items: center; margin: 0 !important; }
+.cv-field small { grid-column: 2; color: var(--muted); font-weight: 500; }
+.cv-field input, .cv-field select { width: 100%; }
+.it-dot.swatch.hollow .dot-shape { fill: var(--st-bg); stroke: var(--cls0); stroke-width: 2.2; }
+@media (max-width: 600px) {
+  .cv-main { grid-template-columns: 1fr; }
+  .cv-pal { flex-direction: row; flex-wrap: wrap; align-items: center; }
+  .cv-pal h3, .cv-cat { display: none; }
+  .cv-item { font-size: 13px; padding: 6px 9px; }
+  .cv-svg { height: 260px; }
+  .cv-field { grid-template-columns: 1fr; }
+  .cv-field small { grid-column: 1; }
+  .cv-extra { padding: 4px 14px 14px; overflow-x: auto; }
+}
+@media (max-width: 600px) {
+  /* on a phone the canvas keeps its size and scrolls sideways inside its frame */
+  .cv-work { overflow-x: auto; }
+  .cv-svg { width: 780px; height: 300px; }
+  .cv-swipe { display: block; }
+}
+.cv-swipe { display: none; font-size: 13px; color: var(--muted); margin: 6px 2px 0; }
+.cv-main > div { min-width: 0; }
