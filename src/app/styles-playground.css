@@ -1,0 +1,59 @@
+/* The playground: the controls along the top, then data, network and output side by side (stacked on a phone). */
+.pg { max-width: 1560px; margin: 0 auto; }
+.pg .card { padding: 12px 14px; overflow: visible; }
+.pg h3 { margin: 0 0 8px; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.pg-top { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: flex-end; margin-bottom: 12px; }
+.pg-run { display: flex; gap: 8px; align-items: center; margin-right: auto; }
+.pg-epoch { font: 600 18px var(--mono); font-variant-numeric: tabular-nums; min-width: 118px; color: var(--text); }
+.pg-field { display: flex; flex-direction: column; gap: 3px; font-size: 12px; color: var(--muted); font-weight: 600; }
+.pg-field select { min-height: 34px; padding: 4px 8px; font-size: 14px; color: var(--text); }
+.pg-cols { display: grid; grid-template-columns: 250px minmax(0, 1fr) 390px; gap: 12px; align-items: start; }
+.pg-sets { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.pg-slider { display: flex; flex-direction: column; gap: 2px; margin: 6px 0 10px; font-size: 13px; font-weight: 600; }
+.pg-slider > span { display: flex; justify-content: space-between; }
+.pg-slider output { font: 500 13px var(--mono); color: var(--muted); }
+.pg-slider input { width: 100%; accent-color: var(--accent); }
+.pg-seed { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; margin: 4px 0 8px; }
+.pg-seed span { margin-right: auto; }
+.pg-note { font-size: 13px; line-height: 1.45; margin: 8px 0 0; }
+.pg-head { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; }
+.pg-head h3 { margin: 0; }
+.pg-layers { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: center; font-size: 13px; }
+.pg-layer { display: inline-flex; align-items: center; gap: 2px; color: var(--muted); }
+.pg-layer b { color: var(--text); min-width: 14px; text-align: center; font-variant-numeric: tabular-nums; }
+.pg-count { font-weight: 650; }
+.icon-btn.pg-pm { width: 28px; height: 28px; border-radius: 8px; border: 1px solid var(--border); }
+.icon-btn.pg-pm svg { width: 15px; height: 15px; }
+.pg-stage { height: clamp(380px, 58vh, 620px); margin-top: 8px; }
+.pg-plot { height: 390px; }
+.pg-curve { height: 190px; }
+.pg-read { font-size: 13.5px; color: var(--muted); margin: 6px 2px 0; min-height: 2.6em; }
+.pg-loss { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 14px; }
+.pg-loss b { font: 650 15px var(--mono); }
+.pg-check { font-size: 13px; display: flex; align-items: center; gap: 6px; margin: 4px 0 2px; }
+#pgNetStage .it-raster { cursor: pointer; }
+#pgNetStage .it-raster.off .ras-img { opacity: 0.28; }
+#pgNetStage .it-raster.off .ras-frame { stroke-dasharray: 3 3; }
+#pgNetStage .it-text.pg-flabel .free-text { font-weight: 600; fill: var(--text); }
+#pgNetStage .it-text.pg-flabel.off .free-text { fill: var(--muted); font-weight: 500; }
+#pgNetStage .it-path.weight { cursor: pointer; }
+#pgNetStage .it-path.weight .free-path { pointer-events: stroke; }
+@media (max-width: 1240px) {
+  .pg-cols { grid-template-columns: 230px minmax(0, 1fr); }
+  .pg-out { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 4px 16px; }
+  .pg-out > h3, .pg-out > .pg-loss { grid-column: 1 / -1; }
+  .pg-out .pg-curve { grid-row: 3 / span 3; grid-column: 2; height: 260px; }
+}
+@media (max-width: 760px) {
+  .pg-cols { grid-template-columns: minmax(0, 1fr); }
+  .pg-out { display: block; }
+  .pg-out .pg-curve { height: 180px; }
+  .pg-stage { height: 360px; }
+  .pg-plot { height: 340px; }
+  .pg-run { width: 100%; margin-right: 0; }
+  .pg-run .btn .lbl { display: none; }
+  .pg-top { gap: 8px 10px; }
+  .pg-field { flex: 1 1 40%; }
+  .pg-net { order: -2; }
+  .pg-out { order: -1; }
+}
