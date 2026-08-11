@@ -1,0 +1,97 @@
+/* Parts 1 and 2 (data, features and evaluation): data tables coloured by column type, histograms, box plots,
+   score bars, splits and folds, and confusion matrices. */
+.it-cell.dthead .cell-box { fill: var(--surface2); stroke: var(--border); }
+.it-cell.dthead .cell-text { font: 700 13px var(--font); fill: var(--muted); }
+.it-cell.dthead.num .cell-box { fill: color-mix(in srgb, var(--cls0) 16%, var(--node)); stroke: color-mix(in srgb, var(--cls0) 55%, transparent); }
+.it-cell.dthead.num .cell-text { fill: var(--text); }
+.it-cell.dthead.cat .cell-box { fill: color-mix(in srgb, var(--cls2) 18%, var(--node)); stroke: color-mix(in srgb, var(--cls2) 55%, transparent); }
+.it-cell.dthead.cat .cell-text { fill: var(--text); }
+.it-cell.dthead.lab .cell-box { fill: color-mix(in srgb, var(--hot) 22%, var(--node)); stroke: var(--hot); }
+.it-cell.dthead.lab .cell-text { fill: var(--text); }
+.it-cell.dthead.new .cell-box { fill: var(--accent-soft); stroke: var(--accent); }
+.it-cell.dthead.new .cell-text { fill: var(--accent-deep); }
+.it-cell.dt .cell-box { fill: var(--node); stroke: var(--border); stroke-width: 1; }
+.it-cell.dt .cell-text { font: 500 13px var(--mono); fill: var(--text); }
+.it-cell.dt.idx .cell-text { fill: var(--muted); }
+.it-cell.dt.cat .cell-text { font-family: var(--font); }
+.it-cell.dt.lab .cell-box { fill: color-mix(in srgb, var(--hot) 8%, var(--node)); }
+.it-cell.dt.miss .cell-box { fill: var(--bad-soft); stroke: color-mix(in srgb, var(--bad) 50%, transparent); }
+.it-cell.dt.miss .cell-text { fill: var(--bad); font-weight: 700; }
+.it-cell.dt.fill .cell-box { fill: var(--good-soft); stroke: var(--good); stroke-width: 1.6; }
+.it-cell.dt.fill .cell-text { fill: var(--good); font-weight: 700; }
+.it-cell.dt.act .cell-box { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.8; }
+.it-cell.dt.hot .cell-box { fill: var(--hot-soft); stroke: var(--hot); stroke-width: 1.8; }
+.it-cell.dt.off .cell-text { fill: var(--muted); }
+.it-cell.dt.off .cell-box { fill: var(--surface2); }
+.it-cell.dt.one .cell-box { fill: color-mix(in srgb, var(--cls2) 22%, var(--node)); }
+.it-cell.dt.one .cell-text { font-weight: 700; }
+.it-cell.dt.c0 .cell-box { fill: var(--cls0-soft); } .it-cell.dt.c1 .cell-box { fill: var(--cls1-soft); }
+.it-cell.dt.c2 .cell-box { fill: color-mix(in srgb, var(--cls2) 16%, var(--node)); }
+/* histograms and box plots */
+.it-cell.hbin .cell-box { fill: color-mix(in srgb, var(--accent) 55%, var(--node)); stroke: none; }
+.it-cell.hbin.c0 .cell-box { fill: color-mix(in srgb, var(--cls0) 70%, transparent); }
+.it-cell.hbin.c1 .cell-box { fill: color-mix(in srgb, var(--cls1) 70%, transparent); }
+.it-cell.hbin.c2 .cell-box { fill: color-mix(in srgb, var(--cls2) 70%, transparent); }
+.it-cell.hbin.soft .cell-box { fill: color-mix(in srgb, var(--node-line) 55%, var(--node)); }
+.it-cell.hbin.hot .cell-box { fill: var(--hot); }
+.it-cell.hbin.good .cell-box { fill: var(--good); }
+.it-path.whisk .free-path { stroke: var(--text); stroke-width: 1.6; fill: none; }
+.it-cell.boxq .cell-box { fill: color-mix(in srgb, var(--accent) 16%, var(--node)); stroke: var(--text); stroke-width: 1.6; }
+.it-path.med .free-path { stroke: var(--accent); stroke-width: 3; }
+.it-path.mean .free-path { stroke: var(--hot); stroke-width: 2.2; stroke-dasharray: 5 3; fill: none; }
+.it-dot.outl .dot-shape { fill: var(--bad); stroke: var(--st-bg); stroke-width: 1.2; }
+.it-dot.pt0 .dot-shape { fill: color-mix(in srgb, var(--text) 60%, transparent); stroke: var(--st-bg); stroke-width: 1; }
+.it-dot.fillpt .dot-shape { fill: var(--good); stroke: var(--st-bg); stroke-width: 1; }
+/* bars and their names */
+.it-text.hbname .free-text { font: 600 13px var(--font); fill: var(--text); }
+.it-text.hbname.muted .free-text { fill: var(--muted); font-weight: 500; }
+.it-text.hbname.act .free-text { fill: var(--accent); font-weight: 700; }
+.it-text.hbval .free-text { font: 600 13px var(--mono); fill: var(--muted); }
+.it-cell.bar.act .cell-box { fill: var(--accent); }
+.it-cell.bar.good .cell-box { fill: var(--good); }
+.it-cell.bar.bad .cell-box { fill: var(--bad); }
+.it-cell.bar.hot .cell-box { fill: var(--hot); }
+.it-cell.bar.c2 .cell-box { fill: var(--cls2); }
+/* splits and folds */
+.it-cell.split .cell-box { stroke: var(--st-bg); stroke-width: 0.6; }
+.it-cell.split.tr .cell-box { fill: color-mix(in srgb, var(--cls0) 60%, var(--node)); }
+.it-cell.split.va .cell-box { fill: color-mix(in srgb, var(--cls2) 65%, var(--node)); }
+.it-cell.split.te .cell-box { fill: var(--hot); }
+.it-cell.split.no .cell-box { fill: var(--surface2); }
+.it-cell.split.cA .cell-box { fill: var(--cls0); } .it-cell.split.cB .cell-box { fill: var(--cls1); } .it-cell.split.cC .cell-box { fill: var(--cls2); }
+.it-cell.key .cell-box { stroke: none; }
+.it-cell.key.tr .cell-box { fill: color-mix(in srgb, var(--cls0) 60%, var(--node)); }
+.it-cell.key.va .cell-box { fill: color-mix(in srgb, var(--cls2) 65%, var(--node)); }
+.it-cell.key.te .cell-box { fill: var(--hot); }
+/* confusion matrices: a ring for the cell that is open */
+.it-cell.cm .cell-box { stroke: var(--border); stroke-width: 1; }
+.it-cell.cm .cell-text { font: 700 16px var(--mono); }
+.it-cell.cm.open .cell-box { stroke: var(--text); stroke-width: 3; }
+.it-cell.cmname .cell-box { fill: none; stroke: none; }
+.it-cell.cmname .cell-text { font: 700 12px var(--font); fill: var(--muted); }
+/* pipeline boxes */
+.it-state.pipe .st-shape { fill: var(--node); stroke: var(--node-line); stroke-width: 1.6; }
+.it-state.pipe .st-text { font: 650 13px var(--font); }
+.it-state.pipe.leak .st-shape { fill: var(--bad-soft); stroke: var(--bad); stroke-width: 2.2; }
+.it-state.pipe.ok .st-shape { fill: var(--good-soft); stroke: var(--good); stroke-width: 2.2; }
+.it-state.pipe.test .st-shape { fill: var(--hot-soft); stroke: var(--hot); stroke-width: 2; }
+.it-wire.leak .wire-path { stroke: var(--bad); stroke-width: 2.4; stroke-dasharray: 6 4; }
+.it-wire.ok .wire-path { stroke: var(--good); stroke-width: 2.2; }
+.it-text.muted .free-text { fill: var(--muted); font-weight: 500; }
+.it-region.leakzone .region-box { fill: color-mix(in srgb, var(--bad) 6%, var(--st-bg)); stroke: var(--bad); stroke-dasharray: 5 4; }
+.it-region.okzone .region-box { fill: color-mix(in srgb, var(--good) 6%, var(--st-bg)); stroke: var(--good); stroke-dasharray: 5 4; }
+/* threshold guides */
+.it-path.thr .free-path { stroke: var(--text); stroke-width: 2.2; fill: none; }
+.it-path.diag .free-path { stroke: var(--node-line); stroke-width: 1.4; stroke-dasharray: 6 5; fill: none; }
+.it-path.area .free-path { fill: color-mix(in srgb, var(--accent) 14%, transparent); stroke: none; }
+.it-path.area.c0 .free-path { fill: color-mix(in srgb, var(--cls0) 16%, transparent); }
+.it-path.resid .free-path { stroke: var(--bad); stroke-width: 1.4; fill: none; }
+.it-path.series.bad .free-path { stroke: var(--bad); }
+.it-path.series.good .free-path { stroke: var(--good); }
+.it-path.series.hot .free-path { stroke: var(--hot); }
+.it-path.series.c2 .free-path { stroke: var(--cls2); }
+.it-path.band .free-path { stroke: none; }
+.it-path.band.c0 .free-path { fill: color-mix(in srgb, var(--cls0) 16%, transparent); }
+.it-path.band.c1 .free-path { fill: color-mix(in srgb, var(--cls1) 18%, transparent); }
+.it-path.band.act .free-path { fill: color-mix(in srgb, var(--accent) 14%, transparent); }
+.it-dot.sp.test.c2 .dot-shape { stroke: var(--cls2); } .it-dot.sp.test.c3 .dot-shape { stroke: var(--cls3); }
