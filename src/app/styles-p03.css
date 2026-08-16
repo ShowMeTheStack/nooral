@@ -1,0 +1,106 @@
+/* Parts 3, 4 and 5 (linear models, neighbours and probabilistic models, trees and ensembles): the pieces their
+   pictures share beyond the kits: residual segments and squares, arrows, matrices, formulas, ellipses, balls. */
+/* eight feature colours (the four class colours and four more), for paths and bars of many features */
+:root { --pl-f4: #b8860b; --pl-f5: #0e8fa3; --pl-f6: #c2408f; --pl-f7: #6b7280; }
+:root[data-theme="dark"] { --pl-f4: #e0b440; --pl-f5: #3fc6d9; --pl-f6: #f07ac0; --pl-f7: #a3abb8; }
+.it-path.series.f0 .free-path { stroke: var(--cls0); } .it-path.series.f1 .free-path { stroke: var(--cls1); } .it-path.series.f2 .free-path { stroke: var(--cls2); } .it-path.series.f3 .free-path { stroke: var(--cls3); }
+.it-path.series.f4 .free-path { stroke: var(--pl-f4); } .it-path.series.f5 .free-path { stroke: var(--pl-f5); } .it-path.series.f6 .free-path { stroke: var(--pl-f6); } .it-path.series.f7 .free-path { stroke: var(--pl-f7); }
+.it-cell.bar.f0 .cell-box { fill: var(--cls0); } .it-cell.bar.f1 .cell-box { fill: var(--cls1); } .it-cell.bar.f2 .cell-box { fill: var(--cls2); } .it-cell.bar.f3 .cell-box { fill: var(--cls3); }
+.it-cell.bar.f4 .cell-box { fill: var(--pl-f4); } .it-cell.bar.f5 .cell-box { fill: var(--pl-f5); } .it-cell.bar.f6 .cell-box { fill: var(--pl-f6); } .it-cell.bar.f7 .cell-box { fill: var(--pl-f7); }
+.it-text.tick.f0 .free-text { fill: var(--cls0); font-weight: 700; } .it-text.tick.f1 .free-text { fill: var(--cls1); font-weight: 700; } .it-text.tick.f2 .free-text { fill: var(--cls2); font-weight: 700; } .it-text.tick.f3 .free-text { fill: var(--cls3); font-weight: 700; }
+.it-text.tick.f4 .free-text { fill: var(--pl-f4); font-weight: 700; } .it-text.tick.f5 .free-text { fill: var(--pl-f5); font-weight: 700; } .it-text.tick.f6 .free-text { fill: var(--pl-f6); font-weight: 700; } .it-text.tick.f7 .free-text { fill: var(--pl-f7); font-weight: 700; }
+.it-dot.mark.f0 .dot-shape { fill: var(--cls0); } .it-dot.mark.f1 .dot-shape { fill: var(--cls1); } .it-dot.mark.f2 .dot-shape { fill: var(--cls2); } .it-dot.mark.f3 .dot-shape { fill: var(--cls3); }
+.it-dot.mark.f4 .dot-shape { fill: var(--pl-f4); } .it-dot.mark.f5 .dot-shape { fill: var(--pl-f5); } .it-dot.mark.f6 .dot-shape { fill: var(--pl-f6); } .it-dot.mark.f7 .dot-shape { fill: var(--pl-f7); }
+.it-path.pl-seg .free-path { stroke: var(--node-line); stroke-width: 1.6; fill: none; }
+.it-path.pl-seg.res .free-path { stroke: var(--hot); stroke-width: 2; }
+.it-path.pl-seg.res.neg .free-path { stroke: var(--neg); }
+.it-path.pl-seg.res.pos .free-path { stroke: var(--pos); }
+.it-path.pl-seg.act .free-path { stroke: var(--accent); stroke-width: 2.4; }
+.it-path.pl-seg.dash .free-path { stroke-dasharray: 5 4; }
+.it-path.pl-seg.thin .free-path { stroke-width: 1.1; }
+.it-path.pl-seg.c0 .free-path { stroke: var(--cls0); } .it-path.pl-seg.c1 .free-path { stroke: var(--cls1); } .it-path.pl-seg.c2 .free-path { stroke: var(--cls2); }
+.it-path.pl-arrow .free-path { stroke: var(--text); stroke-width: 2.2; fill: var(--text); stroke-linejoin: round; }
+.it-path.pl-arrow.act .free-path { stroke: var(--accent); fill: var(--accent); stroke-width: 2.6; }
+.it-path.pl-arrow.hot .free-path { stroke: var(--hot); fill: var(--hot); }
+.it-path.pl-arrow.good .free-path { stroke: var(--good); fill: var(--good); stroke-width: 2.6; }
+.it-path.pl-arrow.muted .free-path { stroke: var(--node-line); fill: var(--node-line); }
+.it-path.pl-arrow.c0 .free-path { stroke: var(--cls0); fill: var(--cls0); } .it-path.pl-arrow.c1 .free-path { stroke: var(--cls1); fill: var(--cls1); }
+.it-path.pl-arrow.c2 .free-path { stroke: var(--cls2); fill: var(--cls2); }
+.it-path.pl-arrow.neg .free-path { stroke: var(--neg); fill: var(--neg); } .it-path.pl-arrow.pos .free-path { stroke: var(--pos); fill: var(--pos); }
+.it-path.pl-sq .free-path { stroke: color-mix(in srgb, var(--hot) 80%, transparent); stroke-width: 1.2; fill: color-mix(in srgb, var(--hot) 16%, transparent); }
+.it-path.pl-plane .free-path { stroke: color-mix(in srgb, var(--accent) 55%, transparent); stroke-width: 1.2; fill: color-mix(in srgb, var(--accent) 12%, transparent); }
+.it-path.pl-axis3 .free-path { stroke: var(--node-line); stroke-width: 1.3; fill: none; }
+.it-path.pl-right .free-path { stroke: var(--text); stroke-width: 1.3; fill: none; }
+.it-path.pl-ell .free-path { fill: none; stroke: var(--text); stroke-width: 2; }
+.it-path.pl-ell.c0 .free-path { stroke: var(--cls0); } .it-path.pl-ell.c1 .free-path { stroke: var(--cls1); } .it-path.pl-ell.c2 .free-path { stroke: var(--cls2); }
+.it-path.pl-ell.soft .free-path { stroke-width: 1.2; stroke-dasharray: 5 4; }
+.it-path.pl-ell.fill.c0 .free-path { fill: color-mix(in srgb, var(--cls0) 10%, transparent); } .it-path.pl-ell.fill.c1 .free-path { fill: color-mix(in srgb, var(--cls1) 10%, transparent); }
+.it-path.pl-ball .free-path { fill: color-mix(in srgb, var(--accent) 16%, transparent); stroke: var(--accent); stroke-width: 2; stroke-linejoin: round; }
+.it-path.pl-ball.l2 .free-path { fill: color-mix(in srgb, var(--cls2) 14%, transparent); stroke: var(--cls2); }
+.it-path.pl-contour .free-path { fill: none; stroke: color-mix(in srgb, var(--text) 45%, transparent); stroke-width: 1.1; }
+.it-path.pl-contour.touch .free-path { stroke: var(--hot); stroke-width: 2.2; }
+.it-path.pl-trail .free-path { fill: none; stroke: var(--text); stroke-width: 1.6; stroke-dasharray: 3 4; }
+.it-path.pl-trail.act .free-path { stroke: var(--accent); }
+.it-path.pl-cut .free-path { fill: none; stroke: var(--text); stroke-width: 2.2; }
+.it-path.pl-cut.act .free-path { stroke: var(--accent); stroke-width: 3; }
+.it-path.pl-cut.soft .free-path { stroke: var(--node-line); stroke-width: 1.4; stroke-dasharray: 5 4; }
+.it-path.pl-vor .free-path { fill: none; stroke: var(--node-line); stroke-width: 1.1; }
+.it-path.pl-box .free-path { fill: none; stroke: var(--node-line); stroke-width: 1.3; }
+.it-path.pl-box.act .free-path { stroke: var(--accent); stroke-width: 2.6; fill: color-mix(in srgb, var(--accent) 8%, transparent); }
+.it-path.pl-box.prune .free-path { stroke: var(--bad); stroke-dasharray: 5 4; fill: color-mix(in srgb, var(--bad) 7%, transparent); }
+.it-path.pl-box.leaf .free-path { stroke: var(--good); stroke-width: 2; }
+.it-path.pl-step .free-path { fill: none; stroke: var(--text); stroke-width: 2.4; stroke-linejoin: round; }
+.it-path.pl-step.act .free-path { stroke: var(--accent); }
+.it-path.pl-step.soft .free-path { stroke: var(--node-line); stroke-width: 1.4; }
+.it-path.pl-bracket .free-path { fill: none; stroke: var(--text); stroke-width: 1.5; }
+.it-cell.pl-mcell .cell-box { fill: var(--node); stroke: var(--border); stroke-width: 1; }
+.it-cell.pl-mcell .cell-text { font: 600 14px var(--mono); fill: var(--text); }
+.it-cell.pl-mcell.act .cell-box { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 2; }
+.it-cell.pl-mcell.hot .cell-box { fill: var(--hot-soft); stroke: var(--hot); stroke-width: 2; }
+.it-cell.pl-mcell.good .cell-box { fill: var(--good-soft); stroke: var(--good); stroke-width: 2; }
+.it-cell.pl-mcell.muted .cell-text { fill: var(--muted); }
+.it-cell.pl-mcell.zero .cell-text { fill: var(--muted); }
+.it-cell.pl-mcell.c0 .cell-box { fill: var(--cls0-soft); stroke: var(--cls0); } .it-cell.pl-mcell.c1 .cell-box { fill: var(--cls1-soft); stroke: var(--cls1); }
+.it-cell.pl-word .cell-box { fill: var(--node); stroke: var(--border); stroke-width: 1; }
+.it-cell.pl-word .cell-text { font: 600 14px var(--mono); fill: var(--text); }
+.it-cell.pl-word.act .cell-box { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 2.2; }
+.it-cell.pl-word.spam .cell-box { fill: var(--cls1-soft); stroke: var(--cls1); }
+.it-cell.pl-word.ham .cell-box { fill: var(--cls0-soft); stroke: var(--cls0); }
+.it-cell.pl-word.unseen .cell-box { fill: var(--surface2); stroke: var(--border); stroke-dasharray: 4 3; }
+.it-cell.pl-word.unseen .cell-text { fill: var(--muted); }
+.it-cell.pl-card .cell-box { fill: var(--surface); stroke: var(--border); stroke-width: 1; }
+.it-cell.pl-card.act .cell-box { stroke: var(--accent); stroke-width: 2; }
+.it-cell.pl-pbar .cell-box { stroke: none; fill: var(--accent); }
+.it-cell.pl-pbar.c0 .cell-box { fill: var(--cls0); } .it-cell.pl-pbar.c1 .cell-box { fill: var(--cls1); } .it-cell.pl-pbar.c2 .cell-box { fill: var(--cls2); } .it-cell.pl-pbar.c3 .cell-box { fill: var(--cls3); }
+.it-cell.pl-pbar.soft .cell-box { fill: color-mix(in srgb, var(--node-line) 50%, var(--node)); }
+.it-cell.pl-pbar.hot .cell-box { fill: var(--hot); }
+.it-cell.pl-pbar.good .cell-box { fill: var(--good); }
+.it-cell.pl-pbar.bad .cell-box { fill: var(--bad); }
+.it-text.pl-eq .free-text { font: 600 15px var(--mono); fill: var(--text); }
+.it-text.pl-eq.act .free-text { fill: var(--accent); }
+.it-text.pl-eq.hot .free-text { fill: var(--hot-deep); }
+.it-text.pl-eq.good .free-text { fill: var(--good); }
+.it-text.pl-eq.muted .free-text { fill: var(--muted); font-weight: 500; }
+.it-text.pl-eq.c0 .free-text { fill: var(--cls0); } .it-text.pl-eq.c1 .free-text { fill: var(--cls1); } .it-text.pl-eq.c2 .free-text { fill: var(--cls2); }
+.it-text.pl-mname .free-text { font: 700 15px var(--mono); fill: var(--text); }
+.it-text.pl-zero .free-text { font: 700 12px var(--font); fill: var(--good); }
+.it-text.pl-lab .free-text { font: 600 13px var(--font); fill: var(--text); }
+.it-text.pl-lab.act .free-text { fill: var(--accent); font-weight: 700; }
+.it-text.pl-lab.muted .free-text { fill: var(--muted); }
+.it-text.pl-lab.c0 .free-text { fill: var(--cls0); font-weight: 700; } .it-text.pl-lab.c1 .free-text { fill: var(--cls1); font-weight: 700; } .it-text.pl-lab.c2 .free-text { fill: var(--cls2); font-weight: 700; }
+.it-text.pl-lab.hot .free-text { fill: var(--hot-deep); font-weight: 700; }
+.it-text.pl-lab.good .free-text { fill: var(--good); font-weight: 700; }
+.it-text.pl-lab.bad .free-text { fill: var(--bad); font-weight: 700; }
+.it-dot.pl-star .dot-shape { fill: var(--good); stroke: var(--st-bg); stroke-width: 2; }
+.it-dot.pl-probe .dot-shape { fill: var(--st-bg); stroke: var(--text); stroke-width: 2.6; }
+.it-dot.pl-probe.act .dot-shape { stroke: var(--accent); }
+.it-dot.pl-pt .dot-shape { fill: var(--text); stroke: var(--st-bg); stroke-width: 1.5; }
+.it-dot.pl-pt.act .dot-shape { fill: var(--accent); }
+.it-dot.pl-pt.hot .dot-shape { fill: var(--hot); }
+.it-dot.pl-pt.muted .dot-shape { fill: var(--node-line); }
+.it-dot.sp.big .dot-shape { stroke: var(--text); stroke-width: 2.4; }
+.it-dot.sp.act .dot-shape { stroke: var(--accent); stroke-width: 2.8; }
+.it-dot.sp.hollow .dot-shape { fill: var(--st-bg); stroke-width: 2.2; }
+.it-dot.sp.hollow.c0 .dot-shape { stroke: var(--cls0); } .it-dot.sp.hollow.c1 .dot-shape { stroke: var(--cls1); } .it-dot.sp.hollow.c2 .dot-shape { stroke: var(--cls2); }
+.it-dot.sp.oob .dot-shape { fill: var(--st-bg); stroke-width: 2; stroke-dasharray: 2 2; }
+.it-dot.sp.oob.c0 .dot-shape { stroke: var(--cls0); } .it-dot.sp.oob.c1 .dot-shape { stroke: var(--cls1); }
