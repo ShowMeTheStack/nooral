@@ -1,0 +1,22 @@
+/* Part 5, trees and ensembles: what its pictures add to the shared part 3 to 5 styles. */
+.it-state.tnode.prune .st-shape { stroke: var(--bad); stroke-dasharray: 4 3; fill: var(--bad-soft); }
+.it-state.tnode.prune .st-text { fill: var(--muted); }
+.it-state.tnode.seen .st-shape { stroke: var(--good); stroke-width: 2.2; }
+.it-cell.p5-feat .cell-box { fill: var(--surface2); stroke: var(--border); stroke-width: 1; }
+.it-cell.p5-feat .cell-text { font: 600 12px var(--font); fill: var(--muted); }
+.it-cell.p5-feat.seen .cell-box { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.4; }
+.it-cell.p5-feat.seen .cell-text { fill: var(--text); }
+.it-cell.p5-feat.won .cell-box { fill: var(--good-soft); stroke: var(--good); stroke-width: 2.2; }
+.it-cell.p5-feat.won .cell-text { fill: var(--good); font-weight: 800; }
+.it-cell.p5-bag .cell-box { stroke: none; }
+.it-cell.p5-bag.out .cell-box { fill: none; stroke: var(--node-line); stroke-width: 1; stroke-dasharray: 2 2; }
+.it-cell.p5-bag.c0 .cell-box { fill: var(--cls0); } .it-cell.p5-bag.c1 .cell-box { fill: var(--cls1); } .it-cell.p5-bag.c2 .cell-box { fill: var(--cls2); }
+.it-cell.p5-bag.x1 .cell-box { opacity: 0.45; } .it-cell.p5-bag.x2 .cell-box { opacity: 0.75; }
+.it-cell.p5-col .cell-box { fill: var(--node); stroke: var(--border); stroke-width: 1; }
+.it-cell.p5-col .cell-text { font: 600 12px var(--mono); fill: var(--text); }
+.it-cell.p5-col.shuf .cell-box { fill: var(--hot-soft); stroke: var(--hot); }
+.it-cell.p5-col.head .cell-box { fill: var(--surface2); }
+.it-cell.p5-col.head .cell-text { font: 700 12px var(--font); fill: var(--muted); }
+.it-cell.p5-col.head.shuf .cell-text { fill: var(--hot-deep); }
+.it-path.p5-err .free-path { stroke: var(--text); stroke-width: 1.4; fill: none; }
+.it-dot.sp.p5-twice .dot-shape { r: 3.8px; stroke: var(--text); stroke-width: 1.2; }
