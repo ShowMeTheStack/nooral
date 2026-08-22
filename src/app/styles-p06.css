@@ -1,0 +1,26 @@
+/* Part 6 (support vector machines) and the shared pieces of parts 6 to 8 (S.Kit.ml): ellipses, arrows, the
+   cutting plane of the kernel lift, the ε-tube of SVR and the one-class border. */
+.it-path.mlell .free-path { fill: none; stroke: var(--text); stroke-width: 2; }
+.it-path.mlell.c0 .free-path { stroke: var(--cls0); } .it-path.mlell.c1 .free-path { stroke: var(--cls1); }
+.it-path.mlell.c2 .free-path { stroke: var(--cls2); } .it-path.mlell.c3 .free-path { stroke: var(--cls3); }
+.it-path.mlell.soft .free-path { stroke-dasharray: 5 4; stroke-width: 1.4; }
+.it-edge.mlarrow .edge-path { stroke: var(--text); stroke-width: 2.2; }
+.it-edge.mlarrow.act .edge-path { stroke: var(--accent); stroke-width: 2.6; }
+.it-edge.mlarrow.c0 .edge-path { stroke: var(--cls0); } .it-edge.mlarrow.c1 .edge-path { stroke: var(--cls1); }
+.it-edge.mlarrow.muted .edge-path { stroke: var(--node-line); stroke-width: 1.6; }
+.it-path.mlplane .free-path { fill: color-mix(in srgb, var(--accent) 16%, transparent); stroke: var(--accent); stroke-width: 1.6; }
+.it-path.mlring .free-path { fill: none; stroke: var(--node-line); stroke-width: 1.1; stroke-dasharray: 3 4; }
+.it-path.mltube .free-path { fill: color-mix(in srgb, var(--accent) 12%, transparent); stroke: none; }
+.it-path.mlbox .free-path { fill: color-mix(in srgb, var(--surface2) 60%, transparent); stroke: var(--node-line); stroke-width: 1.4; }
+.it-path.mlseg .free-path { fill: none; stroke: var(--accent); stroke-width: 3; stroke-linecap: round; }
+.it-path.mlinfl .free-path { fill: color-mix(in srgb, var(--hot) 14%, transparent); stroke: var(--hot); stroke-width: 1.6; stroke-dasharray: 5 4; }
+.it-cell.mlvote .cell-box { fill: var(--node); stroke: var(--node-line); stroke-width: 1.2; }
+.it-cell.mlvote.c0 .cell-box { fill: var(--cls0-soft); stroke: var(--cls0); }
+.it-cell.mlvote.c1 .cell-box { fill: var(--cls1-soft); stroke: var(--cls1); }
+.it-cell.mlvote.c2 .cell-box { fill: color-mix(in srgb, var(--cls2) 18%, var(--node)); stroke: var(--cls2); }
+.it-cell.mlvote.win .cell-box { stroke-width: 2.6; }
+.it-cell.mlvote .cell-text { font: 600 13px var(--font); }
+.it-dot.sp.c2 .dot-shape { fill: var(--cls2); }
+.it-dot.mark.c2 .dot-shape { fill: var(--cls2); }
+.it-path.series.c2 .free-path { stroke: var(--cls2); }
+.it-path.level.c0 .free-path { stroke: var(--cls0); } .it-path.level.c1 .free-path { stroke: var(--cls1); } .it-path.level.c2 .free-path { stroke: var(--cls2); }
