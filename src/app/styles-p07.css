@@ -1,0 +1,48 @@
+/* Part 7, unsupervised learning: two more cluster colours (pink and teal) beside the four of the palette, centre
+   markers, Gaussian ellipses, ε circles, dendrogram links and the cut line. */
+:root { --cls4: #c2307a; --cls5: #0e8a96; }
+:root[data-theme="dark"] { --cls4: #ff7eb8; --cls5: #46c9d4; }
+.it-dot.sp.c4 .dot-shape, .it-dot.swatch.c4 .dot-shape { fill: var(--cls4); }
+.it-dot.sp.c5 .dot-shape, .it-dot.swatch.c5 .dot-shape { fill: var(--cls5); }
+.it-state.centre.c3 .st-shape { fill: var(--cls3); } .it-state.centre.c4 .st-shape { fill: var(--cls4); } .it-state.centre.c5 .st-shape { fill: var(--cls5); }
+.it-path.trail.c3 .free-path { stroke: var(--cls3); } .it-path.trail.c4 .free-path { stroke: var(--cls4); } .it-path.trail.c5 .free-path { stroke: var(--cls5); }
+.it-path.series.c4 .free-path { stroke: var(--cls4); } .it-path.series.c5 .free-path { stroke: var(--cls5); }
+.it-text.c3 .free-text { fill: var(--cls3); font-weight: 700; } .it-text.c4 .free-text { fill: var(--cls4); font-weight: 700; } .it-text.c5 .free-text { fill: var(--cls5); font-weight: 700; }
+.it-cell.bar.c2 .cell-box { fill: var(--cls2); } .it-cell.bar.c3 .cell-box { fill: var(--cls3); } .it-cell.bar.c4 .cell-box { fill: var(--cls4); } .it-cell.bar.c5 .cell-box { fill: var(--cls5); }
+.it-cell.bar.hotbar .cell-box { fill: var(--hot); }
+.it-cell.bar.cn .cell-box { fill: var(--node-line); }
+.it-dot.sp.hollow .dot-shape { fill: var(--st-bg); stroke-width: 2.2; }
+.it-dot.sp.hollow.c0 .dot-shape { stroke: var(--cls0); } .it-dot.sp.hollow.c1 .dot-shape { stroke: var(--cls1); } .it-dot.sp.hollow.c2 .dot-shape { stroke: var(--cls2); }
+.it-dot.sp.hollow.c3 .dot-shape { stroke: var(--cls3); } .it-dot.sp.hollow.c4 .dot-shape { stroke: var(--cls4); } .it-dot.sp.hollow.c5 .dot-shape { stroke: var(--cls5); }
+.it-dot.sp.cross .dot-shape { stroke: var(--text); stroke-width: 1.4; }
+/* Gaussian ellipses: one and two standard deviations */
+.it-path.p7ell .free-path { fill: none; stroke-width: 2.4; }
+.it-path.p7ell.c0 .free-path { stroke: var(--cls0); fill: color-mix(in srgb, var(--cls0) 10%, transparent); }
+.it-path.p7ell.c1 .free-path { stroke: var(--cls1); fill: color-mix(in srgb, var(--cls1) 10%, transparent); }
+.it-path.p7ell.c2 .free-path { stroke: var(--cls2); fill: color-mix(in srgb, var(--cls2) 10%, transparent); }
+.it-path.p7ell.c3 .free-path { stroke: var(--cls3); fill: color-mix(in srgb, var(--cls3) 10%, transparent); }
+.it-path.p7ell.c4 .free-path { stroke: var(--cls4); fill: color-mix(in srgb, var(--cls4) 10%, transparent); }
+.it-path.p7ell.c5 .free-path { stroke: var(--cls5); fill: color-mix(in srgb, var(--cls5) 10%, transparent); }
+.it-path.p7ell.outer .free-path { stroke-width: 1.3; stroke-dasharray: 5 4; fill: none; }
+/* ε circles round a point */
+.it-path.p7eps .free-path { fill: color-mix(in srgb, var(--accent) 8%, transparent); stroke: var(--accent); stroke-width: 1.6; stroke-dasharray: 4 3; }
+.it-path.p7eps.soft .free-path { stroke: var(--node-line); fill: color-mix(in srgb, var(--node-line) 7%, transparent); stroke-width: 1; }
+.it-path.p7nb .free-path { fill: none; stroke: var(--node-line); stroke-width: 1.1; opacity: 0.7; }
+/* dendrograms */
+.it-path.p7link .free-path { fill: none; stroke: var(--node-line); stroke-width: 1.8; stroke-linejoin: round; }
+.it-path.p7link.c0 .free-path { stroke: var(--cls0); } .it-path.p7link.c1 .free-path { stroke: var(--cls1); } .it-path.p7link.c2 .free-path { stroke: var(--cls2); }
+.it-path.p7link.c3 .free-path { stroke: var(--cls3); } .it-path.p7link.c4 .free-path { stroke: var(--cls4); } .it-path.p7link.c5 .free-path { stroke: var(--cls5); }
+.it-path.p7link.new .free-path { stroke: var(--accent); stroke-width: 3; }
+.it-path.p7cut .free-path { stroke: var(--hot); stroke-width: 2; stroke-dasharray: 7 5; fill: none; }
+.it-text.p7cut .free-text { fill: var(--hot-deep); font-weight: 700; }
+.it-path.p7pair .free-path { stroke: var(--accent); stroke-width: 2.4; fill: none; }
+/* isolation cuts */
+.it-path.p7split .free-path { stroke: var(--text); stroke-width: 1.6; fill: none; }
+.it-path.p7split.old .free-path { stroke: var(--node-line); stroke-width: 1.2; }
+.it-path.p7box .free-path { fill: color-mix(in srgb, var(--hot) 14%, transparent); stroke: var(--hot); stroke-width: 1.6; }
+/* projections */
+.it-path.p7proj .free-path { stroke: var(--node-line); stroke-width: 1; fill: none; opacity: 0.8; }
+.it-path.p7axis .free-path { stroke: var(--accent); stroke-width: 3; fill: none; stroke-linecap: round; }
+.it-path.p7axis.second .free-path { stroke: var(--hot); }
+.it-path.p7line .free-path { stroke: var(--accent); stroke-width: 1.4; stroke-dasharray: 6 5; fill: none; }
+.it-raster.p7img .ras-frame { stroke: var(--node-line); }
