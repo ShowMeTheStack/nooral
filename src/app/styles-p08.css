@@ -1,0 +1,39 @@
+/* Part 8 (optimisation): the colours of the six optimisers' paths, heads, curves and names, the arrows of a
+   gradient, a step and a velocity, and the bars of the per-coordinate accumulators. */
+.it-path.optpath.o-nest .free-path, .it-path.series.o-nest .free-path { stroke: var(--cls3); }
+.it-path.optpath.o-ada .free-path, .it-path.series.o-ada .free-path { stroke: var(--accent); }
+.it-path.optpath.o-rms .free-path, .it-path.series.o-rms .free-path { stroke: var(--cls1); }
+.it-path.optpath.o-alt .free-path, .it-path.series.o-alt .free-path { stroke: var(--hot); }
+.it-path.optpath.o-mute .free-path, .it-path.series.o-mute .free-path { stroke: var(--node-line); }
+.it-path.optpath.thin .free-path { stroke-width: 1.8; }
+.it-dot.o-nest .dot-shape { fill: var(--cls3); } .it-dot.o-ada .dot-shape { fill: var(--accent); }
+.it-dot.o-rms .dot-shape { fill: var(--cls1); } .it-dot.o-alt .dot-shape { fill: var(--hot); }
+.it-dot.o-mute .dot-shape { fill: var(--node-line); }
+.it-dot.p8-min .dot-shape { fill: var(--good); stroke: var(--st-bg); stroke-width: 2; }
+.it-dot.p8-sad .dot-shape { fill: var(--st-bg); stroke: var(--bad); stroke-width: 2.4; }
+.it-text.o-nest .free-text { fill: var(--cls3); font-weight: 700; } .it-text.o-ada .free-text { fill: var(--accent); font-weight: 700; }
+.it-text.o-rms .free-text { fill: var(--cls1); font-weight: 700; } .it-text.o-alt .free-text { fill: var(--hot-deep); font-weight: 700; }
+.it-path.swatch.o-nest .free-path { stroke: var(--cls3); } .it-path.swatch.o-ada .free-path { stroke: var(--accent); }
+.it-path.swatch.o-rms .free-path { stroke: var(--cls1); } .it-path.swatch.o-alt .free-path { stroke: var(--hot); }
+/* arrows drawn as one filled shape: a shaft and a head */
+.it-path.p8-arrow .free-path { stroke: var(--text); stroke-width: 2.4; fill: var(--text); stroke-linejoin: round; stroke-linecap: round; }
+.it-path.p8-arrow.grad .free-path { stroke: var(--neg); fill: var(--neg); }
+.it-path.p8-arrow.step .free-path { stroke: var(--accent); fill: var(--accent); }
+.it-path.p8-arrow.vel .free-path { stroke: var(--cls0); fill: var(--cls0); }
+.it-path.p8-arrow.nest .free-path { stroke: var(--cls3); fill: var(--cls3); }
+.it-path.p8-arrow.down .free-path { stroke: var(--good); fill: var(--good); }
+.it-path.p8-arrow.thin .free-path { stroke-width: 1.6; }
+/* the 1-D curves of the landscape topics, and chords */
+.it-path.p8-chord .free-path { fill: none; stroke: var(--hot); stroke-width: 2.2; stroke-dasharray: 6 4; }
+.it-path.p8-chord.bad .free-path { stroke: var(--bad); }
+.it-path.p8-chord.good .free-path { stroke: var(--good); }
+.it-path.p8-band .free-path { fill: color-mix(in srgb, var(--accent) 12%, transparent); stroke: none; }
+.it-cell.p8-bar .cell-box { stroke: none; fill: color-mix(in srgb, var(--accent) 70%, var(--node)); }
+.it-cell.p8-bar.u .cell-box { fill: var(--cls0); } .it-cell.p8-bar.v .cell-box { fill: var(--cls1); }
+.it-cell.p8-bar.soft .cell-box { fill: color-mix(in srgb, var(--node-line) 45%, var(--node)); }
+.it-dot.p8-pt .dot-shape { fill: var(--node-line); stroke: var(--st-bg); stroke-width: 1.2; }
+.it-dot.p8-pt.on .dot-shape { fill: var(--accent); }
+.it-dot.p8-pit .dot-shape { stroke: var(--st-bg); stroke-width: 2.4; }
+.it-dot.p8-pit.c0 .dot-shape { fill: var(--cls0); } .it-dot.p8-pit.c1 .dot-shape { fill: var(--cls1); }
+.it-dot.p8-pit.c2 .dot-shape { fill: var(--cls2); } .it-dot.p8-pit.c3 .dot-shape { fill: var(--cls3); }
+.it-text.p8c3 .free-text { fill: var(--cls3); font-weight: 700; }
