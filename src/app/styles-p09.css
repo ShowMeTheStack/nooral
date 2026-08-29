@@ -1,0 +1,44 @@
+/* Part 9, neural networks: neuron wires and weight chips, the activation curve's guides and tangent, region maps
+   standing in for neurons, the computational graph's value and gradient boxes, and the train and validation series. */
+.it-edge.p09wire .edge-path { stroke: var(--wire); stroke-width: 1.8; }
+.it-edge.p09wire.act .edge-path { stroke: var(--act); stroke-width: 2.8; }
+.it-chip.p09w .chip-box { fill: var(--surface); stroke: var(--node-line); }
+.it-chip.p09w.act .chip-box { stroke: var(--act); fill: var(--act-soft); } .it-chip.p09w.act .chip-text { fill: var(--act-deep); }
+.it-chip.p09w.grad .chip-box { stroke: var(--hot); fill: var(--hot-soft); } .it-chip.p09w.grad .chip-text { fill: var(--hot-deep); }
+.it-state.neuron.p09fn .st-text { font: 700 14px var(--font); }
+.it-path.p09tan .free-path { fill: none; stroke: var(--hot); stroke-width: 2.4; stroke-linecap: round; }
+.it-dot.mark.p09hot .dot-shape { fill: var(--hot); }
+.it-dot.mark.p09dim .dot-shape { fill: var(--node-line); }
+.it-path.level.p09zero .free-path { stroke: var(--text); stroke-width: 2.2; stroke-dasharray: 7 4; }
+.it-edge.p09warrow .edge-path { stroke: var(--text); stroke-width: 2.4; }
+.it-raster.p09map .ras-frame { stroke: var(--node-line); stroke-width: 1.2; }
+.it-raster.p09map.act .ras-frame { stroke: var(--accent); stroke-width: 3; }
+.it-raster.p09map.off { opacity: 0.25; }
+.it-path.series.p09train .free-path { stroke: var(--cls0); stroke-width: 2.4; }
+.it-path.series.p09val .free-path { stroke: var(--cls1); stroke-width: 2.6; }
+.it-path.series.p09alt .free-path { stroke: var(--node-line); stroke-width: 2; stroke-dasharray: 6 4; }
+.it-path.series.p09slope .free-path { stroke: var(--hot); stroke-width: 2.4; }
+.it-dot.mark.p09train .dot-shape { fill: var(--cls0); } .it-dot.mark.p09val .dot-shape { fill: var(--cls1); }
+.it-region.p09sat .region-box, .it-region.p09sat rect { fill: color-mix(in srgb, var(--neg) 10%, transparent); stroke: none; }
+.it-cell.p09g .cell-box { fill: var(--node); stroke: var(--node-line); stroke-width: 1.4; }
+.it-cell.p09g .cell-text { font: 600 15px var(--mono); }
+.it-cell.p09g .cell-lines text:first-child { font-family: var(--font); font-weight: 700; }
+.it-cell.p09g .cell-lines text:nth-child(3) { fill: var(--muted); font-size: 14px; }
+.it-cell.p09g.hasg .cell-lines text:nth-child(3) { fill: var(--hot-deep); font-weight: 800; }
+.it-cell.p09g.leaf .cell-box { fill: var(--surface2); }
+.it-cell.p09g.param .cell-box { stroke: var(--accent); }
+.it-cell.p09g.act .cell-box { stroke: var(--act); stroke-width: 2.8; fill: var(--act-soft); }
+.it-cell.p09g.back .cell-box { stroke: var(--hot); stroke-width: 2.8; fill: var(--hot-soft); }
+.it-cell.p09g.wait .cell-text { fill: var(--muted); }
+.it-text.p09grad .free-text { fill: var(--hot-deep); font: 700 13px var(--mono); }
+.it-text.p09val .free-text { font: 600 13px var(--mono); fill: var(--text); }
+.it-cell.hbin.p09h .cell-box { fill: color-mix(in srgb, var(--accent) 55%, var(--node)); stroke: none; }
+.it-cell.hbin.p09ha .cell-box { fill: color-mix(in srgb, var(--cls0) 60%, transparent); stroke: none; }
+.it-cell.hbin.p09hb .cell-box { fill: color-mix(in srgb, var(--cls1) 70%, transparent); stroke: none; }
+.it-cell.hbin.p09hg .cell-box { fill: color-mix(in srgb, var(--hot) 60%, var(--node)); stroke: none; }
+.it-cell.bar.p09a .cell-box { fill: color-mix(in srgb, var(--cls0) 70%, var(--node)); }
+.it-cell.bar.p09b .cell-box { fill: color-mix(in srgb, var(--cls1) 70%, var(--node)); }
+.it-cell.bar.p09hot .cell-box { fill: color-mix(in srgb, var(--hot) 70%, var(--node)); }
+.it-state.neuron.p09drop .st-shape { fill: var(--surface2); stroke-dasharray: 3 3; opacity: 0.6; }
+.it-state.neuron.p09drop .st-text { fill: var(--muted); }
+.it-path.p09cross .free-path { stroke: var(--bad); stroke-width: 2.4; stroke-linecap: round; fill: none; }
