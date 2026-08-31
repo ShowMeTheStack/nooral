@@ -1,0 +1,27 @@
+/* Part 10 (convolutional networks): number grids with the window lit and cells still to come, images and maps,
+   windows and fields, the residual stack and the confusion cells you can click. */
+.it-cell.hm.lit .cell-box { stroke: var(--accent); stroke-width: 2; }
+.it-cell.hm.wait .cell-box { fill: var(--surface); stroke: var(--border); stroke-width: 1; stroke-dasharray: 3 3; }
+.it-cell.hm.pad .cell-box { stroke: var(--node-line); stroke-width: 1; stroke-dasharray: 3 2.5; }
+.it-cell.hm.tap .cell-box { stroke: var(--hot); stroke-width: 2.6; }
+.it-cell.hm.used .cell-box { stroke: var(--accent); stroke-width: 1.6; }
+.it-raster.p10img .ras-frame { stroke: var(--node-line); stroke-width: 1; }
+.it-raster.p10img.act .ras-frame { stroke: var(--accent); stroke-width: 2.6; }
+.it-raster.p10img.hot .ras-frame { stroke: var(--hot); stroke-width: 2.6; }
+.it-path.win.hot .free-path { stroke: var(--hot); stroke-width: 2.6; }
+.it-path.win.field .free-path { stroke: var(--hot); stroke-width: 2.2; stroke-dasharray: 6 3; }
+.it-text.p10cls .free-text { font-weight: 700; }
+.it-path.series.p10train .free-path { stroke: var(--node-line); stroke-width: 2; stroke-dasharray: 6 4; }
+.it-path.series.p10val .free-path { stroke: var(--accent); stroke-width: 2.6; }
+.it-path.series.p10off .free-path { stroke: var(--neg); stroke-width: 2.6; }
+.it-path.series.p10on .free-path { stroke: var(--pos); stroke-width: 2.6; }
+.it-path.series.p10off.dash .free-path, .it-path.series.p10on.dash .free-path { stroke-width: 1.8; stroke-dasharray: 5 4; }
+.it-path.swatch.p10train .free-path { stroke: var(--node-line); stroke-dasharray: 6 4; } .it-path.swatch.p10val .free-path { stroke: var(--accent); }
+.it-path.swatch.p10off .free-path { stroke: var(--neg); } .it-path.swatch.p10on .free-path { stroke: var(--pos); }
+.it-path.swatch.p10off.dash .free-path, .it-path.swatch.p10on.dash .free-path { stroke-dasharray: 5 4; }
+.it-dot.mark.p10val .dot-shape { fill: var(--accent); } .it-dot.mark.p10train .dot-shape { fill: var(--node-line); }
+.it-dot.mark.p10off .dot-shape { fill: var(--neg); } .it-dot.mark.p10on .dot-shape { fill: var(--pos); }
+.it-cell.hm.diag .cell-box { stroke: var(--good); stroke-width: 1.6; }
+.it-cell.hm.pickable:hover .cell-box { stroke: var(--text); stroke-width: 2; }
+.it-cell.bar.p10best .cell-box { fill: var(--accent); }
+.it-cell.bar.p10other .cell-box { fill: var(--node-line); }
