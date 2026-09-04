@@ -1,0 +1,38 @@
+/* Part 12, transformers: operator signs between matrices, attention arcs, block boxes and the residual stream. */
+.it-text.p12op .free-text { font: 600 20px var(--font); fill: var(--muted); }
+.it-path.p12arc .free-path { fill: none; stroke: var(--accent); stroke-linecap: round; opacity: 0.8; }
+.it-path.p12arc.alt .free-path { stroke: var(--cls1); }
+.it-path.p12arc.bad .free-path { stroke: var(--hot); }
+.it-cell.tok.p12src .cell-box { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 2.4; }
+.it-cell.tok.p12ask .cell-box { fill: var(--hot-soft); stroke: var(--hot); stroke-width: 2.4; }
+.it-cell.tok.p12pad .cell-box { fill: var(--surface2); stroke: var(--border); stroke-dasharray: 4 3; }
+.it-cell.tok.p12pad .cell-text { fill: var(--muted); }
+.it-cell.tok.p12ans .cell-box { fill: color-mix(in srgb, var(--good) 14%, var(--node)); stroke: var(--good); }
+.it-cell.tok.p12wrong .cell-box { fill: var(--bad-soft); stroke: var(--bad); stroke-width: 2.2; }
+.it-cell.hm.p12mask .cell-box { fill: var(--surface2) !important; stroke: var(--border); stroke-dasharray: 3 3; stroke-width: 1; }
+.it-cell.hm.p12mask .cell-text { fill: var(--muted) !important; }
+.it-cell.hm.p12new .cell-box { stroke: var(--hot); stroke-width: 2.4; }
+.it-cell.hm.p12old .cell-box { stroke: var(--good); stroke-width: 1.6; stroke-dasharray: 4 2; }
+.it-cell.hm.p12hit .cell-box { stroke: var(--text); stroke-width: 2.2; }
+.it-cell.p12box .cell-box { fill: var(--node); stroke: var(--wire); stroke-width: 1.7; }
+.it-cell.p12box .cell-text { font: 650 13px var(--font); fill: var(--text); }
+.it-cell.p12box.act .cell-box { fill: var(--act-soft); stroke: var(--act); stroke-width: 2.4; }
+.it-cell.p12box.attn .cell-box { fill: color-mix(in srgb, var(--accent) 10%, var(--node)); stroke: var(--accent); }
+.it-cell.p12box.ffn .cell-box { fill: color-mix(in srgb, var(--cls1) 12%, var(--node)); stroke: var(--cls1); }
+.it-cell.p12box.norm .cell-box { fill: var(--surface2); stroke: var(--node-line); }
+.it-cell.p12box.faded { opacity: 0.4; }
+.it-cell.p12bar .cell-box { fill: var(--accent); stroke: none; }
+.it-cell.p12bar.alt .cell-box { fill: var(--cls1); }
+.it-cell.p12bar.soft .cell-box { fill: color-mix(in srgb, var(--accent) 35%, var(--surface2)); }
+.it-cell.p12bar.hot .cell-box { fill: var(--hot); }
+.it-path.series.p12a .free-path { stroke: var(--accent); stroke-width: 2.6; }
+.it-path.series.p12b .free-path { stroke: var(--cls1); stroke-width: 2.6; stroke-dasharray: 7 4; }
+.it-path.series.p12c .free-path { stroke: var(--hot); stroke-width: 2.2; }
+.it-dot.mark.p12a .dot-shape { fill: var(--accent); } .it-dot.mark.p12b .dot-shape { fill: var(--cls1); } .it-dot.mark.p12c .dot-shape { fill: var(--hot); }
+.it-path.swatch.p12a .free-path { stroke: var(--accent); stroke-width: 2.6; } .it-path.swatch.p12b .free-path { stroke: var(--cls1); stroke-width: 2.6; stroke-dasharray: 7 4; }
+.it-path.swatch.p12c .free-path { stroke: var(--hot); stroke-width: 2.2; }
+.it-wire.p12res .wire-path { stroke: var(--accent); stroke-width: 3; }
+.it-wire.p12side .wire-path { stroke: var(--wire); stroke-width: 1.7; }
+.it-text.p12hint .free-text { font: 500 12px var(--font); fill: var(--muted); }
+.it-text.p12good .free-text { font: 650 13px var(--font); fill: var(--good); }
+.it-text.p12bad .free-text { font: 650 13px var(--font); fill: var(--bad); }
