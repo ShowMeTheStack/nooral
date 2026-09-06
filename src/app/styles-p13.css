@@ -1,0 +1,49 @@
+/* Part 13, language models: probability bars, panels and text boxes, the model and stage boxes, loss curves and the
+   five model widths, the KV-cache grid, key and value tokens, and the two groups of the bias test. */
+.it-cell.bar.p13bar .cell-box { fill: color-mix(in srgb, var(--accent) 62%, var(--node)); }
+.it-cell.bar.p13bar.hot .cell-box { fill: var(--hot); }
+.it-cell.bar.p13bar.soft .cell-box { fill: color-mix(in srgb, var(--node-line) 50%, var(--node)); }
+.it-cell.bar.p13bar.good .cell-box { fill: var(--good); }
+.it-cell.bar.p13bar.bad .cell-box { fill: var(--bad); }
+.it-cell.bar.p13bar.p13low .cell-box { fill: color-mix(in srgb, var(--bad) 75%, var(--node)); }
+.it-cell.bar.p13bar.p13he .cell-box { fill: var(--cls0); }
+.it-cell.bar.p13bar.p13she .cell-box { fill: var(--cls1); }
+.it-text.p13lab .free-text { font: 600 13px var(--mono); fill: var(--text); }
+.it-text.p13lab.soft .free-text { fill: var(--muted); }
+.it-text.p13lab.hot .free-text { fill: var(--hot-deep); font-weight: 800; }
+.it-text.p13num .free-text { font: 600 12px var(--mono); fill: var(--muted); }
+.it-text.p13num.hot .free-text { fill: var(--hot-deep); }
+.it-text.p13new .free-text { fill: var(--accent-deep); font-weight: 700; }
+.it-text.p13faded .free-text { opacity: 0.4; }
+.it-region.p13panel .region-box { fill: color-mix(in srgb, var(--surface2) 60%, transparent); stroke: var(--border); }
+.it-region.p13textbox .region-box { fill: var(--surface); stroke: var(--border); }
+.it-region.p13textbox.p13mine .region-box { fill: var(--accent-soft); stroke: color-mix(in srgb, var(--accent) 60%, transparent); }
+.it-region.p13textbox.p13card .region-box { fill: color-mix(in srgb, var(--surface2) 75%, transparent); stroke: var(--border); }
+.it-cell.tok.p13cur .cell-box { stroke: var(--hot); stroke-width: 2.8; }
+.it-cell.tok.p13unk .cell-box { fill: var(--bad-soft); stroke: var(--bad); }
+.it-cell.tok.p13key .cell-box { fill: var(--cls0-soft); stroke: var(--cls0); }
+.it-cell.tok.p13val .cell-box { fill: var(--cls1-soft); stroke: var(--cls1); }
+.it-cell.tok.p13val.new .cell-box { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 2.4; }
+.it-cell.tok.p13att .cell-box { stroke: var(--hot); stroke-width: 3; }
+.it-cell.tok.p13att .cell-sub { fill: var(--hot-deep); font-weight: 800; }
+.it-state.block.p13model .st-shape { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 2.2; }
+.it-state.block.p13stage .st-shape { fill: var(--node); stroke: var(--node-line); stroke-width: 1.8; }
+.it-state.block.p13stage.act .st-shape { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 2.6; }
+.it-state.block.p13stage.p13later { opacity: 0.55; }
+.it-edge.p13flow .edge-path { stroke: var(--node-line); stroke-width: 2; }
+.it-path.series.p13train .free-path { stroke: color-mix(in srgb, var(--accent) 55%, var(--node)); stroke-width: 1.6; }
+.it-path.series.p13valline .free-path { stroke: var(--hot); stroke-width: 2.4; }
+.it-dot.mark.p13val .dot-shape, .it-dot.swatch.p13valline .dot-shape { fill: var(--hot); }
+.it-path.guide.p13uni .free-path { stroke: var(--muted); stroke-dasharray: 6 4; stroke-width: 1.4; }
+.it-path.series.p13fit .free-path { stroke: var(--text); stroke-width: 1.8; stroke-dasharray: 7 5; }
+.it-path.series.p13s0 .free-path { stroke: var(--cls0); } .it-dot.p13s0 .dot-shape { fill: var(--cls0); }
+.it-path.series.p13s1 .free-path { stroke: var(--cls1); } .it-dot.p13s1 .dot-shape { fill: var(--cls1); }
+.it-path.series.p13s2 .free-path { stroke: var(--cls2); } .it-dot.p13s2 .dot-shape { fill: var(--cls2); }
+.it-path.series.p13s3 .free-path { stroke: var(--cls3); } .it-dot.p13s3 .dot-shape { fill: var(--cls3); }
+.it-path.series.p13s4 .free-path { stroke: var(--hot); } .it-dot.p13s4 .dot-shape { fill: var(--hot); }
+.it-cell.p13kv .cell-box { stroke: none; }
+.it-cell.p13kv.p13run .cell-box { fill: var(--hot); }
+.it-cell.p13kv.p13read .cell-box { fill: color-mix(in srgb, var(--accent) 30%, var(--node)); }
+.it-dot.swatch.p13run .dot-shape { fill: var(--hot); }
+.it-dot.swatch.p13read .dot-shape { fill: color-mix(in srgb, var(--accent) 30%, var(--node)); stroke: var(--accent); }
+.it-line.p13cut .plain-line { stroke: var(--text); stroke-width: 1.6; stroke-dasharray: 5 3; }
