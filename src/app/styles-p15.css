@@ -1,0 +1,43 @@
+/* Part 15 (reinforcement learning): bandit arms with their estimates and true payouts, the strategies' curves, the
+   value board with its arrows, paths walked across a grid, visit counts, and the cart with its pole. */
+.it-cell.p15est .cell-box { fill: color-mix(in srgb, var(--cls0) 55%, var(--node)); stroke: none; }
+.it-cell.p15est.act .cell-box { fill: var(--cls0); }
+.it-path.p15true .free-path { fill: none; stroke: var(--text); stroke-width: 2; stroke-dasharray: 5 3; }
+.it-path.p15true.best .free-path { stroke: var(--good); stroke-width: 2.6; }
+.it-path.p15ucb .free-path { fill: none; stroke: var(--cls1); stroke-width: 2; }
+.it-dot.p15draw .dot-shape { fill: var(--st-bg); stroke: var(--cls3); stroke-width: 2.2; }
+.it-dot.p15draw.act .dot-shape { fill: var(--cls3); }
+.it-path.series.p15reg .free-path { stroke: var(--bad); stroke-width: 2.2; }
+.it-path.series.p15opt .free-path { stroke: var(--good); stroke-width: 2.2; }
+.it-path.series.p15a0 .free-path { stroke: var(--node-line); stroke-dasharray: 6 4; } .it-path.series.p15a1 .free-path { stroke: var(--cls0); }
+.it-path.series.p15a2 .free-path { stroke: var(--cls1); } .it-path.series.p15a3 .free-path { stroke: var(--cls3); }
+.it-path.series.p15q .free-path { stroke: var(--cls0); } .it-path.series.p15s .free-path { stroke: var(--cls1); }
+.it-path.series.p15m .free-path { stroke: var(--text); } .it-path.series.p15len .free-path { stroke: var(--accent); stroke-width: 2.2; }
+.it-path.series.p15th .free-path { stroke: var(--cls1); stroke-width: 1.8; } .it-path.series.p15x .free-path { stroke: var(--cls0); stroke-width: 1.8; }
+.it-path.series.p15eps .free-path { stroke: var(--cls3); } .it-path.series.p15loss .free-path { stroke: var(--text); stroke-width: 1.6; }
+.it-path.series.swatch.p15a0 .free-path { stroke: var(--node-line); } .it-path.series.swatch.p15a1 .free-path { stroke: var(--cls0); }
+.it-path.series.swatch.p15a2 .free-path { stroke: var(--cls1); } .it-path.series.swatch.p15a3 .free-path { stroke: var(--cls3); }
+.it-path.series.swatch.p15q .free-path { stroke: var(--cls0); } .it-path.series.swatch.p15s .free-path { stroke: var(--cls1); }
+.it-path.series.swatch.p15th .free-path { stroke: var(--cls1); } .it-path.series.swatch.p15x .free-path { stroke: var(--cls0); }
+.it-text.p15val .free-text { font: 600 12px var(--mono); }
+.it-wire.greedy.p15arrow .wire-path { stroke-width: 2.2; }
+.it-wire.greedy.p15arrow.changed .wire-path { stroke: var(--accent); stroke-width: 3; }
+.it-path.p15path .free-path { fill: none; stroke: var(--accent); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; opacity: 0.85; }
+.it-path.p15path.q .free-path { stroke: var(--cls0); } .it-path.p15path.s .free-path { stroke: var(--cls1); }
+.it-path.p15path.thin .free-path { stroke-width: 2.4; stroke-dasharray: 5 4; }
+.it-path.p15fan .free-path { fill: none; stroke: var(--accent); stroke-width: 2.2; }
+.it-text.p15p .free-text { font: 700 12px var(--mono); fill: var(--accent); }
+.it-text.p15r .free-text { font: 600 12px var(--mono); fill: var(--muted); }
+/* cart-pole */
+.it-path.p15track .free-path { fill: none; stroke: var(--node-line); stroke-width: 2; }
+.it-path.p15limit .free-path { fill: none; stroke: var(--bad); stroke-width: 1.6; stroke-dasharray: 4 3; }
+.it-cell.p15cart .cell-box { fill: var(--cls0); stroke: var(--text); stroke-width: 1.4; }
+.it-path.p15pole .free-path { fill: none; stroke: var(--cls1); stroke-width: 7; stroke-linecap: round; }
+.it-path.p15pole.ghost .free-path { stroke-width: 3; opacity: 0.32; }
+.it-path.p15pole.fell .free-path { stroke: var(--bad); }
+.it-dot.p15hinge .dot-shape { fill: var(--text); stroke: var(--st-bg); stroke-width: 1.4; }
+.it-edge.mlarrow.p15push .edge-path { stroke: var(--accent); stroke-width: 3; }
+.it-cell.p15buf .cell-box { fill: var(--surface2); stroke: var(--node-line); }
+.it-cell.p15buf.act .cell-box { fill: var(--act-soft); stroke: var(--act); stroke-width: 2; }
+.it-cell.p15cart.ghost .cell-box { fill: none; stroke: var(--node-line); stroke-dasharray: 3 3; opacity: 0.5; }
+.it-dot.p15ret .dot-shape { fill: var(--accent); stroke: none; opacity: 0.75; }
