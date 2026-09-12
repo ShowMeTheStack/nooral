@@ -1,0 +1,43 @@
+/* Part 16, graph neural networks: graph nodes and links, the adjacency cells and the message chips. */
+.it-state.gnode .st-shape { fill: var(--node); stroke: var(--node-line); stroke-width: 1.8; }
+.it-state.gnode .st-text { font-size: 13px; font-weight: 700; }
+.it-state.gnode.lit .st-shape { fill: var(--hot-soft); stroke: var(--hot); stroke-width: 2.6; }
+.it-state.gnode.act .st-shape { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 3; }
+.it-state.gnode.c0 .st-shape { fill: var(--cls0-soft); stroke: var(--cls0); stroke-width: 2.4; }
+.it-state.gnode.c1 .st-shape { fill: var(--cls1-soft); stroke: var(--cls1); stroke-width: 2.4; }
+.it-state.gnode.c2 .st-shape { fill: color-mix(in srgb, var(--cls2) 18%, var(--node)); stroke: var(--cls2); stroke-width: 2.4; }
+.it-state.gnode.unl .st-shape { fill: var(--node); stroke: var(--node-line); stroke-dasharray: 3 2.5; }
+.it-state.gnode.wrong .st-shape { stroke: var(--text); stroke-width: 3.2; }
+.it-state.gnode.faded { opacity: 0.35; }
+.it-path.glink .free-path { fill: none; stroke: var(--edge); stroke-width: 1.8; stroke-linecap: round; }
+.it-path.glink.lit .free-path { stroke: var(--hot); stroke-width: 3.2; }
+.it-path.glink.faded { opacity: 0.3; }
+.it-path.ghead .free-path { fill: var(--edge); stroke: none; }
+.it-path.ghead.lit .free-path { fill: var(--hot); }
+.it-path.ghead.faded { opacity: 0.3; }
+.it-cell.p16a .cell-box { fill: var(--surface); stroke: var(--border); stroke-width: 1; }
+.it-cell.p16a .cell-text { font: 600 12px var(--mono); fill: var(--muted); }
+.it-cell.p16a.one .cell-box { fill: var(--accent-soft); stroke: color-mix(in srgb, var(--accent) 55%, transparent); }
+.it-cell.p16a.one .cell-text { fill: var(--accent-deep); font-weight: 800; }
+.it-cell.p16a.wait .cell-text { fill: transparent; }
+.it-cell.p16a.lit .cell-box { stroke: var(--hot); stroke-width: 2.4; }
+.it-cell.p16a.loop .cell-box { fill: var(--hot-soft); stroke: var(--hot); }
+.it-cell.p16a.loop .cell-text { fill: var(--hot-deep); font-weight: 800; }
+.it-cell.dt.p16id .cell-text, .it-cell.dthead.p16id .cell-text { font-weight: 700; }
+.it-cell.dt.lit .cell-box { fill: var(--hot-soft); stroke: var(--hot); stroke-width: 2; }
+.it-cell.dt.act .cell-box { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 2; }
+.it-cell.dt.new .cell-box { fill: color-mix(in srgb, var(--good) 12%, var(--node)); }
+.it-text.p16deg .free-text { font: 700 12px var(--mono); fill: var(--text); }
+.it-chip.p16chip .chip-box { fill: var(--hot-soft); stroke: var(--hot); stroke-width: 1.4; }
+.it-chip.p16chip .chip-text { fill: var(--hot-deep); font-weight: 700; }
+.it-state.gnode.lit.far .st-shape { fill: color-mix(in srgb, var(--hot) 8%, var(--node)); stroke-dasharray: 4 3; }
+.it-state.gnode .st-ring { stroke: var(--text); stroke-width: 1.4; }
+.it-path.series.p16test .free-path { stroke: var(--accent); stroke-width: 2.6; }
+.it-path.series.p16train .free-path { stroke: var(--node-line); stroke-width: 2; stroke-dasharray: 6 4; }
+.it-path.series.p16sim .free-path { stroke: var(--hot); stroke-width: 2.6; }
+.it-dot.mark.p16test .dot-shape { fill: var(--accent); } .it-dot.mark.p16sim .dot-shape { fill: var(--hot); }
+.it-dot.mark.p16train .dot-shape { fill: var(--node-line); }
+.it-raster.p16sim .ras-frame { stroke: var(--node-line); }
+.it-cell.bar.p16mine .cell-box { fill: var(--accent); } .it-cell.bar.p16other .cell-box { fill: var(--node-line); }
+.it-path.p16cut .free-path { stroke: var(--st-bg); stroke-width: 2.5; fill: none; }
+.it-cell.hm.lit .cell-box { stroke: var(--hot); stroke-width: 2.6; }
