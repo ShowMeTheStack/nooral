@@ -1,0 +1,52 @@
+/* Part 17, robustness, fairness and privacy: decision lines, nudges and ε boxes, poisoned and dropped points,
+   group colours, histogram fills and the threshold guides. */
+.it-path.level.p17edge .free-path { stroke: var(--text); stroke-width: 2; fill: none; }
+.it-path.level.p17edge.adv .free-path { stroke: var(--good); stroke-width: 2.4; }
+.it-path.p17box .free-path { fill: color-mix(in srgb, var(--hot) 12%, transparent); stroke: var(--hot); stroke-width: 1.8; stroke-dasharray: 5 3; }
+.it-path.p17grad .free-path { fill: none; stroke: var(--accent); stroke-width: 2.4; }
+.it-edge.mlarrow.p17grad .edge-path { stroke: var(--accent); stroke-width: 2.6; }
+.it-edge.mlarrow.p17step .edge-path { stroke: var(--hot); stroke-width: 2.6; }
+.it-dot.sp.p17pt .dot-shape { stroke: var(--text); stroke-width: 2.2; }
+.it-dot.sp.p17moved .dot-shape { stroke: var(--hot); stroke-width: 2.4; }
+.it-dot.sp.p17noisy { opacity: 0.75; }
+.it-dot.sp.p17wrong .dot-shape { stroke: var(--text); stroke-width: 2; }
+.it-dot.sp.p17faded { opacity: 0.3; }
+.it-dot.sp.p17flip .dot-shape { stroke: var(--bad); stroke-width: 2.6; }
+.it-dot.sp.p17drop { opacity: 0.25; }
+.it-dot.sp.p17drop .dot-shape { stroke: var(--text); stroke-dasharray: 2 2; }
+.it-path.series.p17plain .free-path { stroke: var(--text); stroke-width: 2.4; }
+.it-path.series.p17adv .free-path { stroke: var(--good); stroke-width: 2.6; }
+.it-path.series.p17acc .free-path { stroke: var(--accent); stroke-width: 2.6; }
+.it-path.series.p17psi .free-path { stroke: var(--hot); stroke-width: 2.4; }
+.it-path.series.p17cur .free-path { stroke: var(--accent); stroke-width: 3; }
+.it-path.series.p17other .free-path { stroke: var(--node-line); stroke-width: 1.8; stroke-dasharray: 5 4; }
+.it-path.series.swatch.p17plain .free-path { stroke: var(--text); } .it-path.series.swatch.p17adv .free-path { stroke: var(--good); }
+.it-dot.mark.p17plain .dot-shape { fill: var(--text); } .it-dot.mark.p17adv .dot-shape { fill: var(--good); }
+.it-dot.mark.p17acc .dot-shape, .it-dot.mark.p17cur .dot-shape { fill: var(--accent); } .it-dot.mark.p17psi .dot-shape { fill: var(--hot); }
+.it-path.guide.p17thr .free-path { stroke: var(--bad); stroke-width: 1.8; stroke-dasharray: 6 4; }
+.it-path.guide.p17clip .free-path { stroke: var(--accent); stroke-width: 2; stroke-dasharray: 6 4; }
+.it-cell.hbin.p17ref .cell-box { fill: none; stroke: var(--text); stroke-width: 1.4; }
+.it-cell.hbin.p17now .cell-box { fill: color-mix(in srgb, var(--hot) 55%, transparent); stroke: none; }
+.it-cell.hbin.p17mem .cell-box { fill: color-mix(in srgb, var(--accent) 55%, transparent); stroke: none; }
+.it-cell.hbin.p17non .cell-box { fill: none; stroke: var(--cls0); stroke-width: 2; }
+.it-cell.bar.gA .cell-box { fill: var(--cls0); } .it-cell.bar.gB .cell-box { fill: var(--cls1); }
+.it-dot.swatch.gA .dot-shape { fill: var(--cls0); } .it-dot.swatch.gB .dot-shape { fill: var(--cls1); }
+.it-text.gA .free-text { fill: var(--cls0); font-weight: 700; } .it-text.gB .free-text { fill: var(--cls1); font-weight: 700; }
+.it-cell.bar.p17clipped .cell-box { fill: var(--hot); } .it-cell.bar.p17ok .cell-box { fill: var(--node-line); }
+.it-cell.bar.p17cut .cell-box { fill: none; stroke: var(--hot); stroke-width: 1.4; stroke-dasharray: 3 2; }
+.it-cell.bar.p17good .cell-box { fill: var(--good); } .it-cell.bar.p17bad .cell-box { fill: var(--bad); }
+.it-cell.bar.p17acc .cell-box { fill: var(--accent); } .it-cell.bar.p17grey .cell-box { fill: var(--node-line); }
+.it-cell.bar.p17alarm .cell-box { fill: var(--bad); } .it-cell.bar.p17calm .cell-box { fill: color-mix(in srgb, var(--hot) 70%, var(--node)); }
+.it-dot.swatch.p17mem .dot-shape { fill: color-mix(in srgb, var(--accent) 55%, transparent); }
+.it-dot.swatch.p17non .dot-shape { fill: var(--st-bg); stroke: var(--cls0); stroke-width: 2; }
+.it-dot.swatch.p17ref .dot-shape { fill: var(--st-bg); stroke: var(--text); stroke-width: 1.6; }
+.it-dot.swatch.p17now .dot-shape { fill: color-mix(in srgb, var(--hot) 55%, transparent); }
+.it-dot.swatch.p17flip .dot-shape { fill: var(--st-bg); stroke: var(--bad); stroke-width: 2.4; }
+.it-dot.swatch.p17drop .dot-shape { fill: var(--st-bg); stroke: var(--text); stroke-dasharray: 2 2; }
+.it-text.p17warn .free-text { fill: var(--bad); font-weight: 700; }
+.it-text.p17ok .free-text { fill: var(--good); font-weight: 700; }
+.it-dot.swatch.p17grey .dot-shape { fill: var(--node-line); } .it-dot.swatch.p17acc .dot-shape { fill: var(--accent); }
+.it-dot.swatch.p17clipped .dot-shape { fill: var(--hot); } .it-dot.swatch.p17ok .dot-shape { fill: var(--node-line); }
+.it-path.level.p17other .free-path { stroke: var(--node-line); stroke-width: 1.8; stroke-dasharray: 6 4; fill: none; }
+.it-dot.sp.p17flip.p17drop .dot-shape { stroke: var(--bad); stroke-width: 2.2; }
+.it-dot.ring.p17me .dot-shape, .it-dot.swatch.p17me .dot-shape { fill: none; stroke: var(--hot); stroke-width: 2.6; }
