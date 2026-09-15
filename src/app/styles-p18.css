@@ -1,0 +1,34 @@
+/* Part 18, practice and interpretability: folds and their rounds, cross-validation marks, waterfall bars, LIME
+   samples, the project pipeline. */
+.it-cell.p18fold .cell-box { fill: var(--cls0-soft); stroke: var(--cls0); }
+.it-cell.p18fold .cell-text { font-size: 12px; fill: var(--text); }
+.it-cell.p18test .cell-box { fill: var(--hot-soft); stroke: var(--hot); stroke-dasharray: 4 3; }
+.it-cell.p18test .cell-text { font-size: 12px; fill: var(--hot-deep); font-weight: 700; }
+.it-cell.p18train .cell-box { fill: var(--cls0-soft); stroke: none; }
+.it-cell.p18hold .cell-box { fill: var(--cls0); stroke: none; }
+.it-path.p18spread .free-path { stroke: var(--node-line); stroke-width: 3; stroke-linecap: round; fill: none; }
+.it-path.p18spread.best .free-path { stroke: var(--accent); }
+.it-dot.mark.p18mean .dot-shape { fill: var(--text); }
+.it-dot.mark.p18best .dot-shape { fill: var(--accent); }
+.it-dot.mark.p18pick .dot-shape { fill: var(--good); stroke: var(--st-bg); stroke-width: 1.5; }
+.it-path.p18guide .free-path { stroke: var(--good); stroke-width: 1.6; stroke-dasharray: 6 4; fill: none; }
+.it-region.p18cur .region-box { fill: color-mix(in srgb, var(--hot) 8%, var(--st-bg)); stroke: var(--hot); stroke-width: 2; }
+.it-cell.hm.p18blank .cell-box { fill: var(--surface); stroke: var(--border); }
+.it-cell.hm.hot .cell-box { stroke: var(--hot); stroke-width: 3; }
+.it-cell.bar.p18imp .cell-box { fill: color-mix(in srgb, var(--accent) 45%, var(--node)); }
+.it-cell.bar.p18top .cell-box { fill: var(--accent); }
+.it-path.p18err .free-path { stroke: var(--text); stroke-width: 1.6; fill: none; }
+.it-path.series.p18ice .free-path { stroke: color-mix(in srgb, var(--cls0) 45%, transparent); stroke-width: 1.2; }
+.it-path.series.p18one .free-path { stroke: var(--good); stroke-width: 2.6; }
+.it-path.series.p18pdp .free-path { stroke: var(--accent); stroke-width: 4; }
+.it-cell.dt.p18shuf .cell-box { fill: var(--hot-soft); stroke: var(--hot); stroke-width: 1.4; }
+.it-path.p18join .free-path { stroke: var(--node-line); stroke-width: 1.2; stroke-dasharray: 3 3; fill: none; }
+.it-path.level.p18sur .free-path { stroke: var(--good); stroke-width: 2.6; stroke-dasharray: 8 5; }
+.it-edge.p18arrow .edge-path { stroke: var(--good); stroke-width: 2.6; }
+.it-state.p18step .st-shape { fill: var(--surface); stroke: var(--node-line); stroke-width: 1.4; }
+.it-state.p18step .st-text { font-size: 13px; font-weight: 600; fill: var(--muted); }
+.it-state.p18step.done .st-shape { fill: color-mix(in srgb, var(--good) 12%, var(--node)); stroke: var(--good); }
+.it-state.p18step.done .st-text { fill: var(--text); }
+.it-state.p18step.now .st-shape { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 2.6; }
+.it-state.p18step.now .st-text { fill: var(--accent-deep); font-weight: 750; }
+.it-wire.p18on .wire-path { stroke: var(--good); }
