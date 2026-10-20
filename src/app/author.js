@@ -48,6 +48,7 @@
       ['Sirkit', 'https://sirkit.jyotiprakash.org', 'digital design you can build, run and see inside, from gates to a small processor'],
       ['Sifer', 'https://sifer.jyotiprakash.org', 'cryptography you can see inside: every cipher, hash and curve opened up, from Enigma to post-quantum'],
       ['Proses', 'https://proses.jyotiprakash.org', 'operating systems you can see inside: processes, scheduling, memory, synchronisation and file systems as machines you set up and break'],
+      ['Arkitek', 'https://arkitek.jyotiprakash.org', 'computer organization you can see inside: RISC-V from an instruction\'s bits to pipelines, caches and GPUs, with every adder, multiplier and floating-point unit opened up'],
     ],
     links: [
       ['mail@jyotiprakash.org', 'mailto:mail@jyotiprakash.org'],
